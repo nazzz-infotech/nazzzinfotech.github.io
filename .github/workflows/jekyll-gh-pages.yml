@@ -35,16 +35,12 @@ jobs:
         run: npm install
       - name: Build React app
         run: npm run build
-      - name: Upload React build artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: react-build
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: react-artifact
           path: react_build/artifact
-          
+
   # Build job
   build:
     runs-on: ubuntu-latest
