@@ -5,6 +5,7 @@ import Step1 from "./step1";
 import Step2 from "./step2";
 import Step3 from "./step3";
 import Step4 from "./step4";
+import { Helmet } from "react-helmet";
 
 function SpreadCombine() {
   let { step } = useParams();
@@ -21,22 +22,27 @@ function SpreadCombine() {
   });
 
   return (
-    <ThemeProvider theme={myTheme}>
-      {(() => {
-        switch (step) {
-          case "1":
-            return <Step1 />;
-          case "2":
-            return <Step2 />;
-          case "3":
-            return <Step3 />;
-          case "4":
-            return <Step4 />;
-          default:
-            return <Typography variant="h4">Unknown Step</Typography>;
-        }
-      })()}
-    </ThemeProvider>
+    <>
+      <Helmet>
+        <title>SpreadCombine</title>
+      </Helmet>
+      <ThemeProvider theme={myTheme}>
+        {(() => {
+          switch (step) {
+            case "1":
+              return <Step1 />;
+            case "2":
+              return <Step2 />;
+            case "3":
+              return <Step3 />;
+            case "4":
+              return <Step4 />;
+            default:
+              return <Typography variant="h4">Unknown Step</Typography>;
+          }
+        })()}
+      </ThemeProvider>
+    </>
   );
 }
 
