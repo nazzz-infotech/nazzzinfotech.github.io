@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: react-artifact
-          path: react_build/artifact
+          path: dist/
 
   # Build job
   build:
